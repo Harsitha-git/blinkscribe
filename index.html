@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlinkScribe - Medical AI Transcription</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #4285f4;
+            --primary-red: #ff4444;
+            --primary-gradient: linear-gradient(135deg, var(--primary-blue), #2b5cc5);
+            --secondary-gradient: linear-gradient(135deg, var(--primary-red), #cc3333);
+            --text-gray: #666;
+            --bg-light: #f8f9fa;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        body {
+            line-height: 1.6;
+            background: var(--bg-light);
+            color: #333;
+        }
+
+        .header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+}
+
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+        .logo {
+    height: 50px;
+    width: auto;
+}
+
+        nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+        nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s;
+    margin: 0;
+}
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .button {
+    background: #4285f4;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration-line: none;
+}
+
+        .button:hover {
+    background: #3367d6;
+    transform: none;
+    box-shadow: none;
+}
+
+        .button-outline {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .button-red {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .button-red:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .hero {
+            padding: 12rem 5% 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            background: linear-gradient(135deg, #f6f9fe, #e6f0ff);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            
+            margin: 0 auto;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(5%, 5%);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 50%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+        }
+
+        .tagline {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .tagline span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .store-buttons img {
+            transition: transform 0.3s ease;
+            height: 40px;
+            width: auto;
+        }
+
+        .store-buttons img:hover {
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #f6f9fe, #e6f0ff);
+            color: #333;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .benefits {
+            padding: 6rem 5%;
+            text-align: center;
+            background: white;
+            overflow: hidden;
+        }
+
+        .benefits-carousel {
+            position: relative;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            overflow: visible;
+            padding: 0 60px;
+        }
+
+        .benefits-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+        }
+
+        .benefit-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background: linear-gradient(135deg, #f6f9fe, #e6f0ff);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        .carousel-button i {
+            line-height: 0;
+        }
+
+        .pricing {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f6f9fe, #e6f0ff);
+            color: #333;
+            text-align: center;
+        }
+
+        .pricing .section-description {
+            color: var(--text-gray);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            color: #333;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .plan-name {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: normal;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .feature-list li {
+            margin: 0.75rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+        }
+
+        .faq {
+            padding: 6rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding-top: 50px;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .cta {
+            padding: 6rem 5% 8rem; /* Increased bottom padding from 6rem to 8rem */
+            text-align: center;
+            background: var(--primary-gradient);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            animation: pulse 15s infinite;
+        }
+
+        .cta .section-title {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta .section-description {
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+            padding-bottom: 20px;
+        }
+
+        .cta .button {
+            background: white;
+            color: var(--primary-blue);
+            position: relative;
+            z-index: 1;
+            margin-top: 2rem; /* Added margin-top */
+            
+        }
+
+        .cta .button:hover {
+            background: var(--bg-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--bg-light);
+            border-top: 1px solid #eee;
+        }
+
+        footer img {
+            height: 30px;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--text-gray);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 8rem 5% 6rem;
+            }
+
+            .tagline {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                justify-content: center;
+            }
+
+            .feature-item {
+                width: calc(50% - 1rem);
+                margin: 0.5rem;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .feature-item h3 {
+                font-size: 0.8rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .button {
+                padding: 0.6rem 1.5rem;
+            }
+
+            .store-buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .store-buttons img {
+                height: 35px;
+                max-width: 120px;
+            }
+
+            .benefits-carousel {
+                padding: 0 40px;
+            }
+
+            .carousel-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .carousel-button.prev {
+                left: 5px;
+            }
+
+            .carousel-button.next {
+                right: 5px;
+            }
+
+            /* Mobile header and navigation styles */
+            header {
+                padding: 1rem;
+            }
+
+            .logo {
+                height: 30px;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-lg);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav a {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: var(--primary-blue);
+                margin: 5px 0;
+                transition: 0.3s;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .benefit-card {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefit-card {
+                flex: 0 0 calc(100% - 20px);
+            }
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <header>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo" class="logo">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-right">
+                <a href="#login" class="button">Login</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="tagline">Transform patient care with <span>blinkScribe</span></h1>
+            <p class="hero-description">
+                Automate your medical documentation with AI-powered transcription that understands medical terminology and context.
+            </p>
+            <h3 style="font-size: 1.2rem; color: var(--primary-blue); margin-top: 2rem; margin-bottom: -1rem;">Get Started</h3>
+            <div class="store-buttons">
+                <a href="#"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Link%20%E2%86%92%20apple_store_btn.png-vgnBqN4kDTKFSwEwiLI8G1va4AT7Nd.png" alt="Download on the App Store"></a>
+                <a href="#"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Link%20%E2%86%92%20google_playstore_btn.png-X0SOLBH5PUFgK1keQKDnt6FSKgQRhu.png" alt="Get it on Google Play"></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20395-xYdMorPkRySKuR2yyEZeWbPezt8CaV.png" alt="BlinkScribe app interface on multiple devices">
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile App</h3>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Time Saving</h3>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Data Security</h3>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>User Friendly</h3>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3>Stay Organized</h3>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI-Powered</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+        <h2 class="section-title">Benefits</h2>
+        <p class="section-description">
+            Experience the future of medical documentation with our innovative features designed for healthcare professionals.
+        </p>
+        <div class="benefits-carousel">
+            <div class="benefits-slider">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Industry Leading Accuracy</h3>
+                    <p>Minimize errors and inconsistencies associated with manual note taking, enhancing documentation accuracy and improving patient care quality.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Saving</h3>
+                    <p>BlinkScribe reduces documentation time, allowing physicians to focus more on patient care and less on paperwork.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3>Enhanced Workflow</h3>
+                    <p>Seamlessly integrate detailed progress notes into electronic health records (EHR) systems, improving workflow efficiency.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Tracking</h3>
+                    <p>Track and save your medical history and health data with secure, organized record-keeping that's always accessible.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Integrated with EMR</h3>
+                    <p>Seamlessly integrate with your existing Electronic Medical Record system for efficient workflow and streamlined data management.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Improved Patient Care</h3>
+                    <p>With comprehensive and timely documentation, healthcare providers can better track patient progress and make informed treatment decisions.</p>
+                </div>
+            </div>
+            <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-description">
+            Choose the plan that best fits your practice needs. All plans include our core features.
+        </p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-name">blinkScribe BASIC</div>
+                <div class="price">Free</div>
+                <ul class="feature-list">
+                    <li>50 Free Visit Minutes</li>
+                    <li>Fully HIPAA Compliant</li>
+                    <li>Real-time Transcription</li>
+                    <li>Dictation Transcription</li>
+                    <li>Context-Aware AI</li>
+                </ul>
+                <a href="#" class="button">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">blinkScribe PLUS</div>
+                <div class="price">$59.99<span>/month</span></div>
+                <ul class="feature-list">
+                    <li>All BlinkScribe BASIC Features</li>
+                    <li>Unlimited Visits</li>
+                    <li>Document Archive</li>
+                    <li>Custom Templates</li>
+                    <li>White Labeling</li>
+                </ul>
+                <a href="#" class="button">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">blinkScribe PRO</div>
+                <div class="price">$199.99<span>/month</span></div>
+                <ul class="feature-list">
+                    <li>All BlinkScribe PLUS Features</li>
+                    <li>EMR Integration</li>
+                    <li>24/7 Customer Support</li>
+                    <li>Advanced Analytics</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="button">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">BrainyMed Hub</div>
+                <div class="price">Enterprise</div>
+                <ul class="feature-list">
+                    <li>BlinkScribe PRO</li>
+                    <li>EMR</li>
+                    <li>Patient Scheduler</li>
+                    <li>ACO Goal Tracking</li>
+                    <li>Custom Integration</li>
+                </ul>
+                <a href="#" class="button button-red">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2 class="section-title" id="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">How accurate is blinkScribe's transcription?</div>
+                <div class="faq-answer">BlinkScribe uses advanced AI technology to achieve industry-leading accuracy rates. Our system is continuously learning and improving, with current accuracy rates exceeding 95% for most medical specialties.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is blinkScribe HIPAA compliant?</div>
+                <div class="faq-answer">Yes, BlinkScribe is fully HIPAA compliant. We implement strict security measures to protect patient data, including end-to-end encryption and secure data storage practices.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can blinkScribe integrate with my existing EMR system?</div>
+                <div class="faq-answer">BlinkScribe is designed to integrate seamlessly with most major EMR systems. Our team can work with you to ensure smooth integration with your existing workflow.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to set up blinkScribe?</div>
+                <div class="faq-answer">Most users can set up BlinkScribe an up BlinkScribe?</div>
+                <div class="faq-answer">Most users can set up BlinkScribe an
+d start using it within minutes. For more complex integrations or custom setups, our support team is available to assist and ensure a smooth onboarding process.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What kind of support does blinkScribe offer?</div>
+                <div class="faq-answer">We offer comprehensive support including online documentation, email support, and phone support for our PRO and Enterprise customers. Our team is dedicated to ensuring you get the most out of BlinkScribe.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 class="section-title">Ready to get started?</h2>
+        <p class="section-description">Sign up for a free account first. No contract or credit card required.</p>
+        <a href="#" class="button button-outline">Get Started →</a>
+    </section>
+
+    <footer>
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo">
+        <p>© 2024 BrainyMed. All rights reserved</p>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // JavaScript for FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('show');
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.classList.remove('show');
+                    a.previousElementSibling.classList.remove('active');
+                });
+
+                // Toggle the clicked answer
+                answer.classList.toggle('show', !isOpen);
+                question.classList.toggle('active', !isOpen);
+            });
+        });
+
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Benefits Carousel
+        const benefitsSlider = document.querySelector('.benefits-slider');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        const benefitCards = document.querySelectorAll('.benefit-card');
+        let currentIndex = 0;
+
+        function showCards(index) {
+            const totalCards = benefitCards.length;
+            const cardsToShow = window.innerWidth > 1024 ? 3 : window.innerWidth > 768 ? 2 : 1;
+            const maxIndex = totalCards - cardsToShow;
+
+            if (index < 0) index = maxIndex;
+            if (index > maxIndex) index = 0;
+
+            currentIndex = index;
+            const offset = (100 / cardsToShow) * index;
+            benefitsSlider.style.transform = `translateX(-${offset}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            showCards(currentIndex - 1);
+        });
+
+        nextButton.addEventListener('click', () => {
+            showCards(currentIndex + 1);
+        });
+
+        // Adjust carousel on window resize
+        window.addEventListener('resize', () => {
+            showCards(currentIndex);
+        });
+
+        // Initialize carousel
+        showCards(currentIndex);
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!hamburger.contains(event.target) && !nav.contains(event.target)) {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking on a nav link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
