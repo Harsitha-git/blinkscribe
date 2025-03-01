@@ -3,95 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why BlinkScribe - AI-Powered Medical Transcription</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Why Choose blinkScribe - BrainyMed</title>
+    <meta name="description" content="Discover why blinkScribe is the leading choice for AI-powered medical documentation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Copy the styles from index.html */
-        /* ... */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg-primary-blue {
+            background-color: #4285F4;
+        }
+        .hover-bg-primary-blue:hover {
+            background-color: #3367d6;
+        }
+        #mobile-menu {
+          display: none;
+        }
+
+        #mobile-menu.active {
+          display: block;
+        }
+
+        @media (min-width: 768px) {
+          #mobile-menu {
+            display: none !important;
+          }
+        }
     </style>
 </head>
-<body>
-    <div class="header-container">
-        <header>
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo" class="logo">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="why-blinkscribe.html">Why blinkScribe</a>
-                <a href="index.html#pricing">Pricing</a>
+<body class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <header class="sticky top-0 z-50 w-full border-b bg-white backdrop-blur">
+        <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+                <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+                <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+                <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+                <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
             </nav>
-            <div class="header-right">
-                <a href="#login" class="button">Login</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </header>
-    </div>
-
-    <section class="why-blinkscribe">
-        <div class="container">
-            <h1 class="section-title">Why Choose BlinkScribe</h1>
-            <p class="section-description">
-                Discover the unique advantages that make BlinkScribe the preferred choice for healthcare professionals seeking efficient and accurate medical documentation.
-            </p>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Advanced AI Technology</h3>
-                    <p>Our state-of-the-art AI understands medical terminology and context, ensuring highly accurate transcriptions.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Time-Saving Efficiency</h3>
-                    <p>Reduce documentation time by up to 70%, allowing you to focus more on patient care.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>HIPAA Compliant</h3>
-                    <p>Your data security is our priority. BlinkScribe is fully HIPAA compliant, ensuring patient information remains protected.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Seamless Integration</h3>
-                    <p>Easily integrate BlinkScribe with your existing EMR systems for a smooth, uninterrupted workflow.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Designed for Healthcare</h3>
-                    <p>Created by healthcare professionals for healthcare professionals, addressing the unique needs of medical documentation.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Our dedicated support team is always ready to assist you, ensuring you get the most out of BlinkScribe.</p>
-                </div>
+            <div class="flex items-center space-x-4">
+                <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+                <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                  <i class="fas fa-bars h-6 w-6"></i>
+                </button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <footer>
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo">
-        <p>© 2024 BrainyMed. All rights reserved</p>
+    <div id="mobile-menu" class="md:hidden">
+      <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+        <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+        <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+        <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+        <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+        <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+        <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+      </nav>
+    </div>
+
+    <main class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-4 text-blue-600">Why Choose blinkScribe?</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Revolutionizing medical documentation with AI-powered technology for efficient, accurate, and seamless
+                healthcare experiences.
+            </p>
+        </section>
+
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-semibold mb-6 text-blue-800">Seamless EHR Integration</h2>
+                    <p class="text-lg mb-6 text-gray-700">
+                        blinkScribe effortlessly integrates with leading EHR systems, ensuring a smooth and efficient
+                        documentation process.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Real-time data access to patient information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Instant note syncing with Athena</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Customizable templates for all specialties</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Rapid onboarding with risk-free 30-day trial</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative flex justify-center">
+    <img 
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Frame-2-CFAXzSfY5SiUKywjyO7givEa7T6V3I.webp" 
+        alt="Isometric illustration of EHR system showing a laptop with patient records and medical professional icon" 
+        class="w-full max-w-md mx-auto"
+    >
+</div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-semibold mb-6 text-blue-800">Seamless Cross-Platform Experience</h2>
+                    <p class="text-lg mb-6 text-gray-700">
+                        Access blinkScribe anywhere, anytime. Our platform provides a consistent and intuitive experience across all your devices.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Responsive design adapts to any screen size</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Synchronized data across all devices</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Native apps for iOS and Android</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span class="text-gray-700">Web-based access for desktop users</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img 
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/heroimg-GPcK2d25njlQBlBIMJJJXT9yz7monv.png" 
+                        alt="blinkScribe interface shown across mobile, tablet, and desktop devices" 
+                        class="w-full"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h2 class="text-3xl font-semibold mb-8 text-center text-blue-800">Cutting-Edge AI & Technology</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-file-alt text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Large Language Models</h3>
+                    <p class="text-gray-600">Advanced AI models for natural language understanding and generation</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-stethoscope text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Medical NLP</h3>
+                    <p class="text-gray-600">Specialized natural language processing for healthcare terminology</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-brain text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Adaptive Learning</h3>
+                    <p class="text-gray-600">Continuous improvement through each interaction</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-clock text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Real-Time Processing</h3>
+                    <p class="text-gray-600">Instant analysis and transcription of medical conversations</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="bg-blue-600 text-white rounded-lg p-8 md:p-12">
+                <h2 class="text-3xl font-semibold mb-6">Effortless Usability</h2>
+                <p class="text-xl mb-8">
+                    blinkScribe is designed for intuitive use, accessibility, and efficiency, ensuring a seamless experience
+                    for physicians.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-globe text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Multilingual Support</h3>
+                            <p class="text-blue-100">28+ languages for global accessibility</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-bolt text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Customizable Templates</h3>
+                            <p class="text-blue-100">Tailor documentation to your specialty</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-laptop text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Streamlined Dashboard</h3>
+                            <p class="text-blue-100">Effortless appointment management</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-shield-alt text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">HIPAA Compliant</h3>
+                            <p class="text-blue-100">Ensuring data security and privacy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center">
+            <h2 class="text-3xl font-semibold mb-6 text-blue-800">Ready to Transform Your Practice?</h2>
+            <p class="text-xl mb-8 text-gray-600 max-w-3xl mx-auto">
+                Join thousands of healthcare professionals who have revolutionized their documentation process with
+                blinkScribe.
+            </p>
+            <a href="#" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-full">
+                Start Your Free Trial <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </section>
+    </main>
+
+    <footer class="border-t py-8">
+        <div class="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
+            <img src="/brainmed-logo.svg" alt="BrainyMed Logo" class="h-8 w-auto">
+            <p class="text-sm text-gray-500">© BrainyMed. All rights reserved.</p>
+        </div>
     </footer>
-
     <script>
-        // Copy the JavaScript from index.html
-        // ...
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
     </script>
 </body>
 </html>

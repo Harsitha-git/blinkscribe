@@ -3,65 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - BlinkScribe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>About Us - BrainyMed</title>
+    <meta name="description" content="Learn about BrainyMed and our mission to revolutionize healthcare access through AI-powered solutions.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Copy the styles from index.html */
-        /* ... */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg-primary-blue {
+            background-color: #4285F4;
+        }
+        .hover-bg-primary-blue:hover {
+            background-color: #3367d6;
+        }
+        #mobile-menu {
+          display: none;
+        }
+
+        #mobile-menu.hidden {
+          display: none;
+        }
+
+        #mobile-menu:not(.hidden) {
+          display: block;
+        }
+
+        @media (min-width: 768px) {
+          #mobile-menu {
+            display: none !important;
+          }
+        }
     </style>
 </head>
-<body>
-    <div class="header-container">
-        <header>
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo" class="logo">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about-us.html">About Us</a>
-                <a href="why-blinkscribe.html">Why blinkScribe</a>
-                <a href="index.html#pricing">Pricing</a>
+<body class="min-h-screen bg-background">
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
+        <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+                <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+                <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+                <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+                <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
             </nav>
-            <div class="header-right">
-                <a href="#login" class="button">Login</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </header>
-    </div>
-
-    <section class="about-us">
-        <div class="container">
-            <h1 class="section-title">About Us</h1>
-            <p class="section-description">
-                BlinkScribe is revolutionizing medical documentation with cutting-edge AI technology. Our mission is to empower healthcare professionals by streamlining their workflow and allowing them to focus on what matters most - patient care.
-            </p>
-            <div class="about-content">
-                <h2>Our Story</h2>
-                <p>
-                    Founded by a team of healthcare professionals and AI experts, BlinkScribe was born out of the frustration of spending countless hours on medical documentation. We understood the critical need for an efficient, accurate, and user-friendly solution that could transform the way medical professionals handle their paperwork.
-                </p>
-                <h2>Our Vision</h2>
-                <p>
-                    We envision a future where healthcare providers can dedicate more time to patient care, unburdened by the demands of extensive documentation. BlinkScribe aims to be at the forefront of this transformation, continually innovating to meet the evolving needs of the healthcare industry.
-                </p>
-                <h2>Our Team</h2>
-                <p>
-                    Our diverse team brings together expertise in healthcare, artificial intelligence, and software development. This unique blend of skills allows us to create a product that truly understands and addresses the challenges faced by medical professionals in their daily practice.
-                </p>
+            <div class="flex items-center space-x-4">
+                <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+                <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                  <i class="fas fa-bars h-6 w-6"></i>
+                </button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <footer>
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-DGRnV1RDTtHbgXlnZvJ6YbkrjyFpvO.png" alt="BlinkScribe Logo">
-        <p>© 2024 BrainyMed. All rights reserved</p>
+    <div id="mobile-menu" class="hidden md:hidden">
+      <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+        <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+        <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+        <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+        <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+        <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+        <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+      </nav>
+    </div>
+
+    <main class="container mx-auto py-24">
+        <section class="mb-16">
+            <h1 class="text-4xl font-bold mb-4 text-center">About BrainyMed</h1>
+            <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto">
+                Revolutionizing healthcare access through AI-powered solutions for rural and semi-urban communities.
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-semibold mb-4">Our Vision</h2>
+                        <p class="mb-4">
+                            At BrainyMed, we recognize the critical shortage of primary care providers in rural and semi-urban
+                            communities. Millions of patients struggle to access timely medical care due to geographic and
+                            resource constraints.
+                        </p>
+                        <p class="mb-4">
+                            Our vision is to bridge this gap by developing the AI Doctor—an intelligent, adaptive model designed
+                            to empower nurses and frontline healthcare workers to triage and diagnose patients efficiently when
+                            higher-level providers are unavailable or difficult to reach.
+                        </p>
+                        <a href="#" class="inline-block mt-4 px-6 py-2 bg-primary-blue hover-bg-primary-blue text-white rounded-md">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 bg-blue-100 flex items-center justify-center p-8">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Healthcare professionals using blinkScribe AI" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Our Values</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white shadow-lg rounded-lg text-center p-6">
+                    <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Empowering Healthcare Workers</h3>
+                    <p class="text-gray-600">We support nurses and frontline staff with cutting-edge AI technology.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg text-center p-6">
+                    <i class="fas fa-heart text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Patient-Centric Care</h3>
+                    <p class="text-gray-600">Our solutions prioritize patient outcomes and experiences.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg text-center p-6">
+                    <i class="fas fa-bolt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Innovation-Driven</h3>
+                    <p class="text-gray-600">We continuously push the boundaries of what's possible in healthcare AI.</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg text-center p-6">
+                    <i class="fas fa-brain text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Ethical AI Development</h3>
+                    <p class="text-gray-600">We're committed to responsible and transparent AI practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-md">
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-md">
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border rounded-md"></textarea>
+                        <button type="submit" class="w-full px-4 py-2 bg-primary-blue hover-bg-primary-blue text-white rounded-md">Send Message</button>
+                    </form>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                            <span>info@brainymed.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-600 mr-2"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>
+                            <span>123 AI Boulevard, Tech City, TC 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="bg-blue-50 rounded-lg p-8 text-center">
+                <h2 class="text-3xl font-semibold mb-4">Join Us in Revolutionizing Healthcare</h2>
+                <p class="text-xl mb-6">
+                    Be part of our mission to bring quality healthcare to every corner of the world.
+                </p>
+                <a href="#" class="inline-block px-6 py-3 bg-primary-blue hover-bg-primary-blue text-white text-lg rounded-md">
+                    Explore Careers <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t py-8">
+        <div class="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
+            <img src="/brainmed-logo.svg" alt="BrainyMed Logo" class="h-8 w-auto">
+            <p class="text-sm text-gray-500">© BrainyMed. All rights reserved.</p>
+        </div>
     </footer>
-
     <script>
-        // Copy the JavaScript from index.html
-        // ...
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      });
     </script>
 </body>
 </html>

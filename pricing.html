@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - BrainyMed</title>
+    <meta name="description" content="Explore our flexible pricing options for blinkScribe, tailored to fit your healthcare practice needs.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg-primary-blue {
+            background-color: #4285F4;
+        }
+        .hover-bg-primary-blue:hover {
+            background-color: #3367d6;
+        }
+        #mobile-menu {
+          display: none;
+        }
+
+        #mobile-menu.active {
+          display: block;
+        }
+
+        @media (min-width: 768px) {
+          #mobile-menu {
+            display: none !important;
+          }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background">
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
+        <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+                <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+                <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+                <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+                <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+                <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+  <i class="fas fa-bars h-6 w-6"></i>
+</button>
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu" class="md:hidden">
+  <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+    <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+    <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+    <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+    <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+    <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+    <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+  </nav>
+</div>
+    <main class="flex-1">
+        <section class="container mx-auto px-4 py-24" id="pricing">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Pricing</h1>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex flex-col border rounded-lg shadow-sm">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-medium">BASIC</h2>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold">Free</span>
+                        </div>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                50 Free Visit Minutes
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Fully HIPAA Compliant
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Real-time Transcription
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Dictation Transcription
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Automated Chart Note Generation
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Context-Aware AI
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Supports 30+ languages
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                30-Day Document Archive
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t">
+                        <a href="#" class="w-full inline-block text-center px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                    </div>
+                </div>
+                <div class="flex flex-col border rounded-lg shadow-sm">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-medium">PLUS</h2>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold">$59.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                All BlinkScribe BASIC Features
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Unlimited Visits
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Document Archive
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Custom Templates
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                White Labeling
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t">
+                        <a href="#" class="w-full inline-block text-center px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                    </div>
+                </div>
+                <div class="flex flex-col border rounded-lg shadow-sm">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-medium">PRO</h2>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold">$199.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                All BlinkScribe PLUS Features
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                EMR Integration
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                24/7 Customer Support
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t">
+                        <a href="#" class="w-full inline-block text-center px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                    </div>
+                </div>
+                <div class="flex flex-col border rounded-lg shadow-sm">
+                    <div class="p-6 border-b">
+                        <h2 class="text-lg font-medium">Enterprise</h2>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold">Request a Quote</span>
+                        </div>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                BlinkScribe PRO
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                EHR
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Patient Scheduler
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                ACO Goal Tracking
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Encrypted Messaging
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                ZDocsConnect - Multi-EMR Interface
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Code Complete
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Native App for Patients (iOS and Android)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Practice Analytics Dashboard
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Clinical Order/Decision Support
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-blue-600"></i>
+                                Team Collaboration Tools
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 border-t">
+                        <a href="#" class="w-full inline-block text-center px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t py-8">
+        <div class="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
+            <img src="/brainmed-logo.svg" alt="BrainyMed Logo" class="h-8 w-auto">
+            <p class="text-sm text-gray-500">© BrainyMed. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    const icon = mobileMenuButton.querySelector('i');
+    if (mobileMenu.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+</script>
+</body>
+</html>
+
