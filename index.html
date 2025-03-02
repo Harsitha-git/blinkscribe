@@ -99,7 +99,7 @@
         </a>
         <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
           <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
-          <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+          <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
           <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
           <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
         </nav>
@@ -114,7 +114,7 @@
       <div id="mobile-menu" class="md:hidden">
         <nav class="flex flex-col items-center space-y-4 bg-white p-4">
           <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
-          <a href="about.html" class="transition-colors hover:text-blue-600">About Us</a>
+          <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
           <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
           <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
           <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
@@ -147,12 +147,12 @@
         <div class="space-y-4">
           <p class="text-lg font-medium">Download blinkScribe Today</p>
           <div class="flex flex-wrap items-center justify-center gap-4">
-            <a href="https://apps.apple.com/app/blinkscribe" class="transition-transform hover:scale-105">
+            <a href="https://apps.apple.com/us/app/blinkscribe/id6476747710" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
               <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Link%20%E2%86%92%20apple_store_btn.png-iDgSzHY8Pbsp4SeJnvKOorLiQIDS6M.png" 
                    alt="Download on the App Store" 
                    class="h-[45px] w-auto">
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.blinkscribe" class="transition-transform hover:scale-105">
+            <a href="https://play.google.com/store/apps/details?id=com.brainycare.autocharting&hl=en_US" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
               <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Link%20%E2%86%92%20google_playstore_btn.png-bvZAAiszPQbSdSMShgU88jTMFx02UQ.png" 
                    alt="Get it on Google Play" 
                    class="h-[45px] w-auto">
@@ -200,11 +200,11 @@
                 </div>
               </div>
 
-              <div class="inline-block">
-                <div class="bg-gray-100 px-4 py-2 rounded-lg">
+              <a href="why-blinkscribe.html" class="inline-block">
+                <div class="bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-300">
                   <span class="font-semibold">Why blinkScribe</span>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div class="relative mx-auto max-w-[100px] lg:max-w-none">
@@ -365,10 +365,80 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t py-8">
-      <div class="container mx-auto px-4 flex flex-col items-center justify-center space-y-4">
-        <img src="/brainmed-logo.svg" alt="BrainyMed Logo" class="h-8 w-auto">
-        <p class="text-sm text-gray-500">© BrainyMed. All rights reserved.</p>
+    <footer class="border-t py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Logo and Company Info -->
+          <div class="lg:col-span-2">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bm_logo_new_ht_65%204-fYSF6VoVu3AmQkJ2wBI1suLpjGehLh.png" alt="BrainyMed Logo" class="h-12 w-auto mb-4">
+            <p class="text-gray-600 mb-4">Revolutionizing healthcare documentation with AI-powered solutions for medical professionals.</p>
+            <div class="flex space-x-4">
+              <a href="https://twitter.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="https://linkedin.com/company/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                <i class="fab fa-linkedin text-xl"></i>
+              </a>
+              <a href="https://facebook.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                <i class="fab fa-facebook text-xl"></i>
+              </a>
+              <a href="https://instagram.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product Links -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Product</h3>
+            <ul class="space-y-3">
+              <li><a href="why-blinkscribe.html" class="text-gray-600 hover:text-blue-600">Features</a></li>
+              <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600">Pricing</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-blue-600">Security</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-blue-600">Enterprise</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Links -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h3>
+            <ul class="space-y-3">
+              <li><a href="about-us.html" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-blue-600">Careers</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+              <li><a href="#" class="text-gray-600 hover:text-blue-600">Press</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Contact</h3>
+            <ul class="space-y-3">
+              <li class="text-gray-600">
+                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                admin@brainymed.com
+              </li>
+              <li class="text-gray-600">
+                <i class="fas fa-phone mr-2 text-gray-400"></i>
+                (682) 344 0264
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="text-sm text-gray-500">
+              © 2024 BrainyMed. All rights reserved.
+            </div>
+            <div class="flex space-x-6 md:justify-end">
+              <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Privacy Policy</a>
+              <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Terms of Service</a>
+              <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
