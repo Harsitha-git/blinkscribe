@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - BlinkScribe</title>
+  <meta name="description" content="Explore the latest insights, tips, and news about healthcare documentation and AI technology from BlinkScribe.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .bg-primary-blue {
+      background-color: #4285F4;
+    }
+    .hover-bg-primary-blue:hover {
+      background-color: #3367d6;
+    }
+    .text-primary-blue {
+      color: #4285F4;
+    }
+    .border-primary-blue {
+      border-color: #4285F4;
+    }
+    #mobile-menu {
+      display: none;
+    }
+    #mobile-menu.active {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      #mobile-menu {
+        display: none !important;
+      }
+    }
+    .blog-card {
+      transition: all 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .category-badge {
+      transition: all 0.2s ease;
+    }
+    .category-badge:hover {
+      transform: translateY(-2px);
+    }
+    .blog-title {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+      height: 4.5em;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
+    <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+      </a>
+      <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+        <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+        <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+        <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+        <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+        <a href="blog.html" class="transition-colors text-blue-600 font-medium">Blog</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+        <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+        <button id="mobile-menu-button" class="md:hidden p-2">
+          <i class="fas fa-bars h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="md:hidden">
+    <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+      <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+      <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+      <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+      <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+      <a href="blog.html" class="transition-colors text-blue-600 font-medium">Blog</a>
+      <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+      <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+    </nav>
+  </div>
+
+  <main class="container mx-auto px-4 py-12">
+    <!-- Blog Header -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl font-bold mb-4">BlinkScribe Blog</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Insights, tips, and news about healthcare documentation, AI technology, and improving patient care efficiency.
+      </p>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="mb-16">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="md:flex">
+          <div class="md:flex-shrink-0 md:w-1/2">
+            <img class="h-full w-full object-cover md:h-full md:w-full" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=600&width=800" alt="Featured blog post image">
+          </div>
+          <div class="p-8 md:w-1/2">
+            <div class="uppercase tracking-wide text-sm text-primary-blue font-semibold">Featured Article</div>
+            <a href="blog-post.html" class="block mt-1 text-2xl leading-tight font-bold text-black hover:text-blue-600 transition-colors">
+              Time Theft in Healthcare: A Critical Challenge
+            </a>
+            <p class="mt-2 text-gray-500">March 12, 2024</p>
+            <p class="mt-4 text-gray-600">
+              Time theft is a critical yet often overlooked issue in the medical industry, with systemic inefficiencies dramatically impacting healthcare delivery and professional well-being. In a field where every moment can be life-changing, the consequences of lost time and physician burnout deserve our attention and support.
+            </p>
+            <div class="mt-6">
+              <a href="blog-post.html" class="inline-flex items-center text-primary-blue hover:text-blue-800 font-medium">
+                Read Full Article
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="mb-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Blog Post 1 -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">March 12, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">The relationship between administrative tasks and physician burnout has reached critical proportions in today's healthcare environment</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Time theft is a critical yet often overlooked issue in the medical industry, with systemic inefficiencies dramatically impacting healthcare delivery and professional well-being...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Dr. Emily Chen">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Dr. Emily Chen</p>
+                <p class="text-sm text-gray-500">Healthcare Efficiency Specialist</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 (Placeholder) -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">February 28, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">When administrative burdens consume physicians' time, the consequences extend far beyond personal frustration</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Discover how BlinkScribe's seamless integration with leading EHR systems can streamline your workflow and reduce documentation time by up to 60%...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Author avatar">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Dr. Sarah Johnson</p>
+                <p class="text-sm text-gray-500">Medical Director</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 (Placeholder) -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">February 15, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">Beyond immediate patient care, time theft silently undermines the future of medicine by eroding physicians' capacity to teach, mentor, and innovate</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              In today's mobile healthcare environment, the ability to access your tools across multiple devices is crucial. Learn how BlinkScribe's cross-platform approach enhances productivity...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Author avatar">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Michael Chen</p>
+                <p class="text-sm text-gray-500">Product Manager</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 4 (Placeholder) -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">January 30, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">The relationship between administrative tasks and physician burnout has reached critical proportions in today's healthcare environment</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              With support for over 30 languages, BlinkScribe is helping healthcare providers better serve diverse patient populations. See how multilingual capabilities are making a difference...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Author avatar">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Dr. Maria Rodriguez</p>
+                <p class="text-sm text-gray-500">Linguistic Specialist</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 5 (Placeholder) -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">January 18, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">When administrative burdens consume physicians' time, the consequences extend far beyond personal frustration</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              One size doesn't fit all in healthcare documentation. Explore how specialty-specific templates can enhance the quality and efficiency of your clinical notes...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Author avatar">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Dr. James Wilson</p>
+                <p class="text-sm text-gray-500">Cardiologist</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 6 (Placeholder) -->
+        <article class="blog-card bg-white rounded-lg shadow-md overflow-hidden">
+          <img class="w-full h-48 object-cover" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=400&width=600" alt="Blog post image">
+          <div class="p-6">
+            <span class="text-xs text-gray-500">January 5, 2024</span>
+            <h2 class="text-xl font-bold mt-2 mb-3 hover:text-blue-600 transition-colors blog-title">
+              <a href="blog-post.html">Beyond immediate patient care, time theft silently undermines the future of medicine by eroding physicians' capacity to teach, mentor, and innovate</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              For healthcare professionals who are constantly moving between patients and locations, mobile transcription offers unprecedented flexibility. Learn how to maximize efficiency with BlinkScribe's mobile app...
+            </p>
+            <div class="flex items-center">
+              <img class="h-10 w-10 rounded-full mr-4" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder.svg?height=100&width=100" alt="Author avatar">
+              <div>
+                <p class="text-sm font-medium text-gray-900">Dr. Robert Kim</p>
+                <p class="text-sm text-gray-500">Emergency Physician</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="flex justify-center mb-16">
+      <nav class="inline-flex rounded-md shadow">
+        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50">
+          Previous
+        </a>
+        <a href="#" class="px-4 py-2 text-sm font-medium text-white bg-primary-blue border border-primary-blue hover:bg-blue-700">
+          1
+        </a>
+        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+          2
+        </a>
+        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+          3
+        </a>
+        <span class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300">
+          ...
+        </span>
+        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+          8
+        </a>
+        <a href="#" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50">
+          Next
+        </a>
+      </nav>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="bg-blue-600 text-white rounded-xl p-8 mb-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">Stay Updated with BlinkScribe</h2>
+        <p class="mb-6">Subscribe to our newsletter for the latest articles, product updates, and healthcare documentation tips.</p>
+        <form class="flex flex-col sm:flex-row gap-4 justify-center">
+          <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-md text-gray-900 w-full sm:w-auto flex-grow max-w-md" required>
+          <button type="submit" class="px-6 py-3 bg-white text-blue-600 font-medium rounded-md hover:bg-gray-100 transition-colors">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-sm mt-4 text-blue-100">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Logo and Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bm_logo_new_ht_65%204-fYSF6VoVu3AmQkJ2wBI1suLpjGehLh.png" alt="BrainyMed Logo" class="h-12 w-auto mb-4">
+          <p class="text-gray-600 mb-4">Revolutionizing healthcare documentation with AI-powered solutions for medical professionals.</p>
+          <div class="flex space-x-4">
+            <a href="https://twitter.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="https://linkedin.com/company/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://facebook.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="https://instagram.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Product</h3>
+          <ul class="space-y-3">
+            <li><a href="features.html" class="text-gray-600 hover:text-blue-600">Features</a></li>
+            <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600">Pricing</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Security</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Enterprise</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="about-us.html" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+            <li><a href="blog.html" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Careers</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Press</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Contact</h3>
+          <ul class="space-y-3">
+            <li class="text-gray-600">
+              <i class="fas fa-envelope mr-2 text-gray-400"></i>
+              admin@brainymed.com
+            </li>
+            <li class="text-gray-600">
+              <i class="fas fa-phone mr-2 text-gray-400"></i>
+              (682) 344 0264
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="text-sm text-gray-500">
+            © 2024 BrainyMed. All rights reserved.
+          </div>
+          <div class="flex space-x-6 md:justify-end">
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Privacy Policy</a>
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Terms of Service</a>
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileMenuButton.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+</body>
+</html>
+
