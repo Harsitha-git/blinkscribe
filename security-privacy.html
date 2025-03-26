@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Security & Privacy - BlinkScribe</title>
+  <meta name="description" content="Learn about BlinkScribe's commitment to data security, privacy, and HIPAA compliance for healthcare documentation.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .bg-primary-blue {
+      background-color: #4285F4;
+    }
+    .hover-bg-primary-blue:hover {
+      background-color: #3367d6;
+    }
+    .text-primary-blue {
+      color: #4285F4;
+    }
+    .border-primary-blue {
+      border-color: #4285F4;
+    }
+    #mobile-menu {
+      display: none;
+    }
+    #mobile-menu.active {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      #mobile-menu {
+        display: none !important;
+      }
+    }
+    .security-card {
+      transition: all 0.3s ease;
+    }
+    .security-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <header class="sticky top-0 z-50 w-full border-b bg-white backdrop-blur">
+    <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+      </a>
+      <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+        <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+        <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+        <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+        <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+        
+      </nav>
+      <div class="flex items-center space-x-4">
+        <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+        <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+        <button id="mobile-menu-button" class="md:hidden p-2">
+          <i class="fas fa-bars h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="md:hidden">
+    <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+      <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+      <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+      <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+      <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+     
+      <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+      <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+    </nav>
+  </div>
+
+  <main class="container mx-auto px-4 py-12">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl font-bold mb-4">Data Security & Privacy</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        At <i>blinkScribe</i>, we prioritize the security and privacy of your data. Our comprehensive approach ensures your medical information remains protected at all times.
+      </p>
+    </section>
+
+    <!-- HIPAA Compliance Section -->
+    <section class="mb-16">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/3 bg-blue-600 text-white p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold mb-4">HIPAA Compliance</h2>
+            <p class="text-blue-100">
+              <i>blinkScribe</i> is fully HIPAA compliant, meeting all requirements for protecting sensitive patient health information.
+            </p>
+          </div>
+          <div class="md:w-2/3 p-8">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-700">
+                  <i class="fas fa-shield-alt mr-2"></i> Administrative Safeguards
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  We implement comprehensive policies and procedures to protect electronic health information, including regular risk assessments, staff training, and designated security personnel.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-700">
+                  <i class="fas fa-lock mr-2"></i> Physical Safeguards
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Our infrastructure is protected by state-of-the-art physical security measures, including controlled access to facilities and equipment that houses patient data.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-700">
+                  <i class="fas fa-key mr-2"></i> Technical Safeguards
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  We employ advanced encryption, access controls, authentication protocols, and real-time logging and audit trails to track all data access to ensure data integrity and secure transmission of PHI.
+                </p>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Security Features -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Our Security Measures</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">End-to-End Encryption</h3>
+          <p class="text-gray-600">
+            All data is encrypted both in transit and at rest using AES-256 encryption, ensuring your information remains secure throughout its lifecycle.
+          </p>
+        </div>
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Role-Based Access Control</h3>
+          <p class="text-gray-600">
+            Our platform implements strict access controls, ensuring that only authorized personnel can access specific data based on their role and need.
+          </p>
+        </div>
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-history"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Comprehensive Audit Trails</h3>
+          <p class="text-gray-600">
+            Every action within the system is logged and monitored, creating detailed audit trails that track who accessed what information and when.
+          </p>
+        </div>
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-shield-virus"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Advanced Threat Protection</h3>
+          <p class="text-gray-600">
+            Our systems are continuously monitored for potential threats, with real-time detection and prevention mechanisms to safeguard against unauthorized access.
+          </p>
+        </div>
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Secure Cloud Infrastructure</h3>
+          <p class="text-gray-600">
+            We utilize industry-leading cloud providers with SOC 2 Type II certification, ensuring the highest standards of security, availability, and confidentiality.
+          </p>
+        </div>
+        <div class="security-card bg-white rounded-lg shadow-md p-6">
+          <div class="text-blue-600 text-4xl mb-4">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Regular Security Updates</h3>
+          <p class="text-gray-600">
+            Our systems are continuously updated with the latest security patches and improvements to address emerging threats and vulnerabilities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Privacy Section -->
+    <section class="mb-16">
+      <div class="bg-gray-100 rounded-lg p-8">
+        <h2 class="text-3xl font-bold mb-6 text-center">Your Data Privacy Rights</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-eye-slash mr-2"></i> Data Minimization
+            </h3>
+            <p class="text-gray-600 mb-4">
+              We collect only the information necessary to provide transcription services, including audio data, timestamps, and user preferences. Any non-essential metadata is automatically anonymized or discarded.
+            </p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-user-lock mr-2"></i> Patient Consent
+            </h3>
+            <p class="text-gray-600 mb-4">
+              We ensure proper consent mechanisms are in place for all data collection and processing activities, giving patients control over their information.
+            </p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-trash-alt mr-2"></i> Data Retention
+            </h3>
+            <p class="text-gray-600 mb-4">
+              We retain data for a period of 24 months, after which they are permanently deleted unless required for compliance or legal obligations. Audit logs are separately maintained to ensure security monitoring. Upon request, users can delete their data immediately.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-globe mr-2"></i> International Compliance
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Our privacy practices comply with international regulations including GDPR and CCPA, providing comprehensive protection regardless of location.
+            </p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-file-alt mr-2"></i> Transparent Privacy Policy
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Our detailed privacy policy clearly explains how we collect, use, and protect your data, written in plain language that's easy to understand.
+            </p>
+            
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">
+              <i class="fas fa-user-edit mr-2"></i> Access and Control
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Patients and healthcare providers have the right to access, correct, and in some cases delete their personal information through secure channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Your Data Rights Section -->
+<section class="mb-16">
+  <div class="bg-white rounded-lg shadow-md p-8">
+    <h2 class="text-3xl font-bold mb-6 text-center">Your Data Rights</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="security-card bg-white rounded-lg shadow-md p-6">
+        <div class="text-blue-600 text-4xl mb-4">
+          <i class="fas fa-file-download"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Access & Portability</h3>
+        <p class="text-gray-600">
+          You may request a copy of all transcriptions and metadata associated with your account. We provide this data in standard, machine-readable formats.
+        </p>
+      </div>
+      <div class="security-card bg-white rounded-lg shadow-md p-6">
+        <div class="text-blue-600 text-4xl mb-4">
+          <i class="fas fa-trash"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Deletion Requests</h3>
+        <p class="text-gray-600">
+          You can permanently delete all your stored data through the account settings or by contacting support@brainymed.com. Deletion requests are processed within 10 business days.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="mb-16">
+      <div class="bg-blue-600 text-white rounded-lg p-8">
+        <div class="md:flex items-center justify-between">
+          <div class="md:w-2/3 mb-6 md:mb-0">
+            <h2 class="text-2xl font-bold mb-4">Have Questions About Our Security?</h2>
+            <p class="text-blue-100">
+              Our security team is available to address any concerns you may have about how we protect your data. Contact us for more information.
+            </p>
+          </div>
+          <div>
+            <a href="mailto:security@blinkscribe.com" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-md hover:bg-gray-100 transition-colors">
+              Contact Security Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Logo and Company Info -->
+        <div class="lg:col-span-2">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bm_logo_new_ht_65%204-fYSF6VoVu3AmQkJ2wBI1suLpjGehLh.png" alt="BrainyMed Logo" class="h-12 w-auto mb-4">
+          <p class="text-gray-600 mb-4">Revolutionizing healthcare documentation with AI-powered solutions for medical professionals.</p>
+          <div class="flex space-x-4">
+            <a href="https://twitter.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="https://linkedin.com/company/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://facebook.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="https://instagram.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Product</h3>
+          <ul class="space-y-3">
+            <li><a href="features.html" class="text-gray-600 hover:text-blue-600">Features</a></li>
+            <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600">Pricing</a></li>
+            <li><a href="security-privacy.html" class="text-gray-600 hover:text-blue-600">Security</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Enterprise</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h3>
+          <ul class="space-y-3">
+            <li><a href="about-us.html" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+            <li><a href="blog.html" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Careers</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600">Press</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Contact</h3>
+          <ul class="space-y-3">
+            <li class="text-gray-600">
+              <i class="fas fa-envelope mr-2 text-gray-400"></i>
+              admin@brainymed.com
+            </li>
+            <li class="text-gray-600">
+              <i class="fas fa-phone mr-2 text-gray-400"></i>
+              (682) 344 0264
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="text-sm text-gray-500">
+            © 2024 BrainyMed. All rights reserved.
+          </div>
+          <div class="flex space-x-6 md:justify-end">
+            <a href="security-privacy.html" class="text-sm text-gray-500 hover:text-blue-600">Privacy Policy</a>
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Terms of Service</a>
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileMenuButton.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - BlinkScribe</title>
+    <meta name="description" content="Join BrainyMed and help us revolutionize healthcare with AI-powered solutions. Explore career opportunities for experienced professionals and new graduates.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg-primary-blue {
+            background-color: #4285F4;
+        }
+        .hover-bg-primary-blue:hover {
+            background-color: #3367d6;
+        }
+        .text-primary-blue {
+            color: #4285F4;
+        }
+        .border-primary-blue {
+            border-color: #4285F4;
+        }
+        #mobile-menu {
+            display: none;
+        }
+        #mobile-menu.active {
+            display: block;
+        }
+        @media (min-width: 768px) {
+            #mobile-menu {
+                display: none !important;
+            }
+        }
+        .career-card {
+            transition: all 0.3s ease;
+        }
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
+        <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blinkscribe%202-4BjL50PhNL1ViWRLeoEInpzkvSeYeL.png" alt="blinkScribe Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden md:flex md:flex-row md:space-y-0 md:space-x-6">
+                <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+                <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+                <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+                <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+                <a href="blog.html" class="transition-colors hover:text-blue-600">Blog</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="/login" class="hidden md:inline-flex px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+                <a href="#get-started" class="hidden md:inline-flex px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i class="fas fa-bars h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="md:hidden">
+        <nav class="flex flex-col items-center space-y-4 bg-white p-4">
+            <a href="index.html" class="transition-colors hover:text-blue-600">Home</a>
+            <a href="about-us.html" class="transition-colors hover:text-blue-600">About Us</a>
+            <a href="why-blinkscribe.html" class="transition-colors hover:text-blue-600">Why blinkScribe</a>
+            <a href="pricing.html" class="transition-colors hover:text-blue-600">Pricing</a>
+            <a href="blog.html" class="transition-colors hover:text-blue-600">Blog</a>
+            <a href="/login" class="transition-colors hover:text-blue-600">Login</a>
+            <a href="#get-started" class="px-4 py-2 rounded-md bg-primary-blue hover-bg-primary-blue text-white">Get Started</a>
+        </nav>
+    </div>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-4">Join Our Team</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Help us revolutionize healthcare with AI-powered solutions. Explore opportunities for experienced professionals and new graduates.
+            </p>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Experienced Professionals Card -->
+            <div class="career-card bg-white rounded-lg shadow-md p-6">
+                <i class="fas fa-briefcase text-4xl text-primary-blue mb-4"></i>
+                <h2 class="text-2xl font-semibold mb-2">Experienced Professionals</h2>
+                <p class="text-gray-600 mb-4">
+                    Take your career to the next level. We offer challenging roles and opportunities for growth in a dynamic, innovative environment.
+                </p>
+                <a href="mailto:careers@brainymed.com?subject=Experienced Professional Application" class="inline-block px-6 py-3 bg-primary-blue hover:bg-blue-700 text-white rounded-md transition-colors">
+                    Explore Opportunities
+                </a>
+            </div>
+
+            <!-- New Graduates Card -->
+            <div class="career-card bg-white rounded-lg shadow-md p-6">
+                <i class="fas fa-graduation-cap text-4xl text-primary-blue mb-4"></i>
+                <h2 class="text-2xl font-semibold mb-2">New Graduates</h2>
+                <p class="text-gray-600 mb-4">
+                    Start your career with a company that's making a difference. We provide mentorship and training to help you succeed.
+                </p>
+                <a href="mailto:careers@brainymed.com?subject=New Graduate Application" class="inline-block px-6 py-3 bg-primary-blue hover:bg-blue-700 text-white rounded-md transition-colors">
+                    Start Your Journey
+                </a>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="bg-gray-100 rounded-lg p-8 mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">Why Join Us?</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Innovative Culture</h3>
+                    <p class="text-gray-600 mb-4">Be part of a team that's pushing the boundaries of AI in healthcare.</p>
+                    <h3 class="text-xl font-semibold mb-2">Professional Growth</h3>
+                    <p class="text-gray-600 mb-4">We invest in your development with training programs and mentorship.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Impactful Work</h3>
+                    <p class="text-gray-600 mb-4">Make a real difference in healthcare by improving patient outcomes.</p>
+                    <h3 class="text-xl font-semibold mb-2">Competitive Benefits</h3>
+                    <p class="text-gray-600 mb-4">Enjoy comprehensive health, financial, and wellness benefits.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Positions Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">Open Positions</h2>
+            <p class="text-xl text-gray-600 text-center mb-8">
+                Check out our current openings and find the perfect fit for your skills and experience.
+            </p>
+            <p class="text-center">
+                <a href="mailto:careers@brainymed.com" class="inline-block px-6 py-3 bg-primary-blue hover:bg-blue-700 text-white rounded-md transition-colors">
+                    View All Positions
+                </a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="border-t py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Logo and Company Info -->
+                <div class="lg:col-span-2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bm_logo_new_ht_65%204-fYSF6VoVu3AmQkJ2wBI1suLpjGehLh.png" alt="BrainyMed Logo" class="h-12 w-auto mb-4">
+                    <p class="text-gray-600 mb-4">Revolutionizing healthcare documentation with AI-powered solutions for medical professionals.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://facebook.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://instagram.com/brainymed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-500">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Product</h3>
+                    <ul class="space-y-3">
+                        <li><a href="features.html" class="text-gray-600 hover:text-blue-600">Features</a></li>
+                        <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600">Pricing</a></li>
+                        <li><a href="security-privacy.html" class="text-gray-600 hover:text-blue-600">Security</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600">Enterprise</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about-us.html" class="text-gray-600 hover:text-blue-600">About Us</a></li>
+                        <li><a href="careers.html" class="text-gray-600 hover:text-blue-600">Careers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600">Blog</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 uppercase mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-600">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            admin@brainymed.com
+                        </li>
+                        <li class="text-gray-600">
+                            <i class="fas fa-phone mr-2 text-gray-400"></i>
+                            (682) 344 0264
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="text-sm text-gray-500">
+                        © 2024 BrainyMed. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6 md:justify-end">
+                        <a href="security-privacy.html" class="text-sm text-gray-500 hover:text-blue-600">Privacy Policy</a>
+                        <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Terms of Service</a>
+                        <a href="#" class="text-sm text-gray-500 hover:text-blue-600">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
+
